@@ -33,3 +33,4 @@ jobs:
           token: ${{ secrets.CODECOV_TOKEN }}
           files: ./phpunit.report.xml
           verbose: true
+          flags: tests
