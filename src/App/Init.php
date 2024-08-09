@@ -60,4 +60,14 @@ class Init
     {
         return '6'. "\n";
     }
+
+    public function printSeven(): string
+    {
+        return '7'. "\n";
+    }
+
+    public function printEight(): string
+    {
+        return '8'. "\n";
+    }
 }
