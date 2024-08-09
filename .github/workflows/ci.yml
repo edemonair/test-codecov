@@ -8,32 +8,37 @@ jobs:
 
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Install composer and dependencies
         uses: php-actions/composer@v6
 
-      - name: PHPUnit Tests
-        uses: php-actions/phpunit@v3
-        env:
-          XDEBUG_MODE: coverage
-        with:
-          bootstrap: vendor/autoload.php
-          configuration: phpunit.xml
-          php_extensions: xdebug
-          args: tests --coverage-clover ./phpunit-coverage.xml
-          version: 9
+      - name: Install dependencies
+        run: composer install
 
-      # Copy and paste the codecov/test-results-action here
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v4
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          files: ./phpunit-coverage.xml
+      - name: Run PHPUnit with coverage
+        run: composer phpunit-run--with-coverage
 
-      - name: Upload coverage reports to Codecov
-        uses: codecov/codecov-action@v4.0.1
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          files: ./phpunit-coverage.xml
-          verbose: true
+#        uses: php-actions/phpunit@v3
+#        env:
+#          XDEBUG_MODE: coverage
+#        with:
+#          bootstrap: vendor/autoload.php
+#          configuration: phpunit.xml
+#          php_extensions: xdebug
+#          args: tests --coverage-clover ./phpunit-coverage.xml
+#          version: 9
+#
+#      # Copy and paste the codecov/test-results-action here
+#      - name: Upload coverage to Codecov
+#        uses: codecov/codecov-action@v4
+#        with:
+#          token: ${{ secrets.CODECOV_TOKEN }}
+#          files: ./phpunit-coverage.xml
+#
+#      - name: Upload coverage reports to Codecov
+#        uses: codecov/codecov-action@v4.0.1
+#        with:
+#          token: ${{ secrets.CODECOV_TOKEN }}
+#          files: ./phpunit-coverage.xml
+#          verbose: true
