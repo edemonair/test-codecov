@@ -4,6 +4,6 @@ coverage:
       default: false
       platform:
         target: 85%
-        threshold: 1%
+        threshold: 0%
         paths:
           - "app/"
