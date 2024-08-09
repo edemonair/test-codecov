@@ -7,3 +7,9 @@ coverage:
         threshold: 0%
         paths:
           - "app/"
+    patch:
+      default:
+        threshold: 0%
+
+comment:
+  require_changes: true
