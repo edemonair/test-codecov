@@ -25,4 +25,9 @@ class Init
     {
         return 'Hey! You are looking good today'. "\n";
     }
+
+    public function comment(): string
+    {
+        return 'Meeeh'. "\n";
+    }
 }
