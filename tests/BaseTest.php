@@ -36,6 +36,6 @@ class BaseTest extends TestCase
     {
         $init = new Init();
 
-        self::assertSame('How are you?!' . "\n", $init->ask());
+        self::assertSame('How are you?' . "\n", $init->ask());
     }
 }
