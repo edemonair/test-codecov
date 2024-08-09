@@ -1,8 +1,7 @@
 coverage:
   status:
     project:
-      default: false
-      platform:
+      default:
         target: 20%
         threshold: 0%
         paths:
