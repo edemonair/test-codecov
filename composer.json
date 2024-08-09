@@ -1,0 +1,30 @@
+{
+    "name": "edem/test-codecov",
+    "autoload": {
+        "psr-4": {
+            "Edem\\TestCodecov\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Artem A."
+        }
+    ],
+    "require": {
+        "php": "~8.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "phpunit-config": "./vendor/bin/phpunit --generate-configuration",
+        "phpunit-config--migrate": "./vendor/bin/phpunit --migrate-configuration",
+        "phpunit-run": "./vendor/bin/phpunit tests",
+        "phpunit-run--with-coverage": "./vendor/bin/phpunit tests --coverage-clover ./phpunit-coverage.xml"
+    }
+}

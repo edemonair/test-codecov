@@ -1,0 +1,11 @@
+services:
+
+  php:
+    container_name: test-codecov-php
+    build:
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/app:rw
+      - ./.docker/php/xdebug.ini:/usr/local/etc/php/conf.d/xdebug-coverage-mode.ini:ro
+    env_file:
+      - .env
