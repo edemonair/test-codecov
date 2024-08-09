@@ -28,4 +28,14 @@ class BaseTest extends TestCase
 
         self::assertSame('Bye!' . "\n", $init->bye());
     }
+
+    /**
+     * @covers \Edem\TestCodecov\App\Init::ask()
+     */
+    public function testInitAsk(): void
+    {
+        $init = new Init();
+
+        self::assertSame('How are you?' . "\n", $init->ask());
+    }
 }

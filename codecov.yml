@@ -1,11 +1,16 @@
 coverage:
   status:
-    project: #add everything under here, more options at https://docs.codecov.com/docs/commit-status
-      default:
-        # basic
-        target: auto #default
+    project:
+      default: false
+      platform:
+        target: 20%
         threshold: 0%
-        base: auto
+        paths:
+          - "app/"
+    patch:
+      default:
+        target: 0%
+        threshold: 0%
 
 comment:
   require_changes: true

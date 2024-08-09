@@ -8,12 +8,14 @@ jobs:
 
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Install composer and dependencies
         uses: php-actions/composer@v6
+        with:
+          php_version: "8.3.9"
 
-      - name: PHPUnit Tests
+      - name: Running PHPUnit tests with coverage
         uses: php-actions/phpunit@v3
         env:
           XDEBUG_MODE: coverage
@@ -21,12 +23,13 @@ jobs:
           bootstrap: vendor/autoload.php
           configuration: phpunit.xml
           php_extensions: xdebug
-          args: tests --coverage-clover ./phpunit-coverage.xml
+          args: tests --coverage-clover ./phpunit.report.xml
           version: 9
+          php_version: "8.3.9"
 
-      - name: Upload coverage reports to Codecov
+      - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v4.0.1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          files: ./phpunit-coverage.xml
+          files: ./phpunit.report.xml
           verbose: true

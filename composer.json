@@ -25,6 +25,6 @@
         "phpunit-config": "./vendor/bin/phpunit --generate-configuration",
         "phpunit-config--migrate": "./vendor/bin/phpunit --migrate-configuration",
         "phpunit-run": "./vendor/bin/phpunit tests",
-        "phpunit-run--with-coverage": "./vendor/bin/phpunit tests --coverage-clover ./phpunit-coverage.xml"
+        "phpunit-run--with-coverage": "./vendor/bin/phpunit tests --coverage-clover ./phpunit.report.xml"
     }
 }
