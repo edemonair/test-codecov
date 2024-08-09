@@ -24,6 +24,13 @@ jobs:
           args: tests --coverage-clover ./phpunit-coverage.xml
           version: 9
 
+      # Copy and paste the codecov/test-results-action here
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: ./phpunit-coverage.xml
+
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v4.0.1
         with:
