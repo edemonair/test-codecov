@@ -18,4 +18,14 @@ class BaseTest extends TestCase
 
         self::assertSame('Hello!' . "\n", $init->hello());
     }
+
+    /**
+     * @covers \Edem\TestCodecov\App\Init::bye()
+     */
+    public function testInitBye(): void
+    {
+        $init = new Init();
+
+        self::assertSame('Bye!' . "\n", $init->bye());
+    }
 }
