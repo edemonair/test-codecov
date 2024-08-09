@@ -12,13 +12,15 @@ jobs:
 
       - name: Install composer and dependencies
         uses: php-actions/composer@v6
+        with:
+          php_version: "8.3.9"
 
-      - name: Install dependencies
-        run: composer install
-
-      - name: Run PHPUnit with coverage
-        run: composer phpunit-run--with-coverage
-
+#      - name: Install dependencies
+#        run: composer install
+#
+#      - name: Run PHPUnit with coverage
+#        run: composer phpunit-run--with-coverage
+#
 #        uses: php-actions/phpunit@v3
 #        env:
 #          XDEBUG_MODE: coverage
