@@ -3,7 +3,7 @@ coverage:
     project:
       default: false
       platform:
-        target: 10%
-        threshold: 0%
+        target: 85%
+        threshold: 1%
         paths:
           - "app/"
