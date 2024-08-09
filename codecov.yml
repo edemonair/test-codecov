@@ -10,6 +10,3 @@ coverage:
       default:
         target: 0%
         threshold: 0%
-
-comment:
-  require_changes: true
