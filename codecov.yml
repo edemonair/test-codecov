@@ -1,8 +1,7 @@
 coverage:
   status:
     project:
-      default: false
-      platform:
+      default:
         target: 20%
         threshold: 0%
         paths:
@@ -11,6 +10,3 @@ coverage:
       default:
         target: 0%
         threshold: 0%
-
-comment:
-  require_changes: true
